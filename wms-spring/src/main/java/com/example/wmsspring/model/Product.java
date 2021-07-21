@@ -1,7 +1,6 @@
 package com.example.wmsspring.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -33,12 +32,6 @@ public class Product {
 
     @Column(name = "minimum_required")
     private int minimumRequired;
-
-    @OneToMany(mappedBy = "product")
-    private Set<Purchase> purchases;
-
-    @OneToMany(mappedBy = "product")
-    private Set<Order> orders;
 
     public Product(String productName, int partNumber, String productLabel, int startingInventory, int inventoryReceived, int inventoryShipped, int inventoryOnHand, int minimumRequired) {
         this.productName = productName;
@@ -124,21 +117,5 @@ public class Product {
 
     public void setMinimumRequired(int minimumRequired) {
         this.minimumRequired = minimumRequired;
-    }
-
-    public Set<Purchase> getPurchases() {
-        return purchases;
-    }
-
-    public void setPurchases(Set<Purchase> purchases) {
-        this.purchases = purchases;
-    }
-
-    public Set<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
     }
 }

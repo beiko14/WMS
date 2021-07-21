@@ -1,8 +1,5 @@
 package com.example.wmsspring.model;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -19,11 +16,11 @@ public class Purchase {
     @Column(name = "purchase_date")
     private LocalDate purchaseDate;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(targetEntity = Product.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id", referencedColumnName = "id", nullable = false)
     private Product product;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(targetEntity = Supplier.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "supplier_id", referencedColumnName = "id", nullable = false)
     private Supplier supplier;
 
