@@ -1,0 +1,28 @@
+<h2>Employee List</h2>
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Part Number</th>
+            <th>Product Label</th>
+            <th>Starting Inventory</th>
+            <th>Inventory received</th>
+            <th>Inventory Shipped</th>
+            <th>Inventory on Hand</th>
+            <th>Minimum required</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td> {{ product.productName }}</td>
+            <td> {{ product.partNumber }}</td>
+            <td> {{ product.productLabel }} </td>
+            <td> {{ product.startingInventory }}</td>
+            <td> {{ product.inventoryReceived }}</td>
+            <td> {{ product.inventoryShipped }} </td>
+            <td> {{ product.inventoryOnHand }}</td>
+            <td> {{ product.minimumRequired }}</td>
+        </tr>
+    </tbody>
+</table> 
