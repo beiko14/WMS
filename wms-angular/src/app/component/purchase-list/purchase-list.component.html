@@ -1,0 +1,20 @@
+<h2>Incoming Purchases</h2>
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Number received</th>
+            <th>Purchase Date</th>
+            <th>Product</th>
+            <th>Supplier</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let purchase of purchases">
+            <td> {{ purchase.numberReceived }}</td>
+            <td> {{ purchase.purchaseDate }}</td>
+            <td> {{ purchase.product.productName }} </td>
+            <td> {{ purchase.supplier.supplierName }}</td>
+        </tr>
+    </tbody>
+</table> 
