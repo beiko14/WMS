@@ -3,10 +3,7 @@ package com.example.wmsspring.controller;
 import com.example.wmsspring.model.Product;
 import com.example.wmsspring.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +18,10 @@ public class ProductController {
     @GetMapping("/products")
     private List<Product> getAllProducts(){
         return productRepository.findAll();
+    }
+
+    @PostMapping("/products")
+    public Product createProduct(@RequestBody Product product){
+        return productRepository.save(product);
     }
 }

@@ -1,0 +1,47 @@
+<div class="col-md-6 offset-md-3">
+
+    <h3>Create Product</h3>
+
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" class="form-control" id="productName" [(ngModel)]="product.productName" name="productName">
+        </div>
+
+        <div class="form-group">
+            <label>Part Number</label>
+            <input type="text" class="form-control" id="partNumber" [(ngModel)]="product.partNumber" name="partNumber">
+        </div>
+
+        <div class="form-group">
+            <label>Product Label</label>
+            <input type="text" class="form-control" id="productLabel" [(ngModel)]="product.productLabel" name="productLabel">
+        </div>
+        <div class="form-group">
+            <label>Starting Inventory</label>
+            <input type="text" class="form-control" id="startingInventory" [(ngModel)]="product.startingInventory" name="startingInventory">
+        </div>
+
+        <div class="form-group">
+            <label>Inventory received</label>
+            <input type="text" class="form-control" id="inventoryReceived" [(ngModel)]="product.inventoryReceived" name="inventoryReceived">
+        </div>
+
+        <div class="form-group">
+            <label>Inventory shipped</label>
+            <input type="text" class="form-control" id="inventoryShipped" [(ngModel)]="product.inventoryShipped" name="inventoryShipped">
+        </div>
+
+        <div class="form-group">
+            <label>Inventory on Hand</label>
+            <input type="text" class="form-control" id="inventoryOnHand" [(ngModel)]="product.inventoryOnHand" name="inventoryOnHand">
+        </div>
+
+        <div class="form-group">
+            <label>Minimum required</label>
+            <input type="text" class="form-control" id="minimumRequired" [(ngModel)]="product.minimumRequired" name="minimumRequired">
+        </div>
+
+        <button class="btn btn-success" type="submit">Save Product</button>
+    </form>
+</div>
